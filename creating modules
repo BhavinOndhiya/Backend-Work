@@ -1,0 +1,29 @@
+//This is for Index.js File with which we can call our modules
+
+console.log(average([3,4]))
+const average = require("./mod");
+const mod = require("./mod");
+console.log(mod.name) 
+console.log(mod.avg([3,4]))
+console.log("This is index.js");
+
+
+//This file is for mod.js where we create our own modules in NodeJS
+
+console.log("This is module");
+
+function average(arr){
+    let sum = 0;
+    arr.forEach(element => {
+        sum += element;
+    });
+    return sum/arr.length;
+}
+
+// module.exports = {
+//     avg: average,
+//     name: "Harry",
+//     repo: "GitHub"
+// }
+
+module.exports.name = "Harry";
